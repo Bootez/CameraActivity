@@ -40,32 +40,6 @@ public class MediaSaver extends AsyncTask<byte[], String, String> {
         return null;
     }
 
-    // @Override
-    // public void run() {
-    //
-    // File pictureFile = getOutputMediaFile(MEDIA_TYPE_IMAGE);
-    // if (pictureFile == null) {
-    // // Log.d(TAG,
-    // // "Error creating media file, check storage permissions: " +
-    // // e.getMessage());
-    // Log.d(TAG, "Error creating media file, check storage permissions: ");
-    // return;
-    // }
-    //
-    // try {
-    // FileOutputStream fos = new FileOutputStream(pictureFile);
-    // fos.write(mData);
-    // fos.close();
-    // } catch (FileNotFoundException e) {
-    // Log.d(TAG, "File not found: " + e.getMessage());
-    // } catch (IOException e) {
-    // Log.d(TAG, "Error accessing file: " + e.getMessage());
-    // }
-    //
-    // super.run();
-    // }
-
-    // Saving Media Files
     public static final int MEDIA_TYPE_IMAGE = 1;
     public static final int MEDIA_TYPE_VIDEO = 2;
 
