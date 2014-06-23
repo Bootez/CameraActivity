@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import android.annotation.SuppressLint;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Environment;
@@ -14,8 +15,6 @@ import android.util.Log;
 
 public class MediaSaver extends AsyncTask<byte[], String, String> {
     private static final String TAG = "MediaSaver";
-
-    private byte[] mData;
 
     @Override
     protected String doInBackground(byte[]... data) {
@@ -49,6 +48,7 @@ public class MediaSaver extends AsyncTask<byte[], String, String> {
     }
 
     /** Create a File for saving an image or video */
+    @SuppressLint("SimpleDateFormat")
     private static File getOutputMediaFile(int type) {
         // To be safe, you should check that the SDCard is mounted
         // using Environment.getExternalStorageState() before doing this.
@@ -69,8 +69,7 @@ public class MediaSaver extends AsyncTask<byte[], String, String> {
         }
 
         // Create a media file name
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss")
-                .format(new Date());
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         File mediaFile;
         if (type == MEDIA_TYPE_IMAGE) {
             mediaFile = new File(mediaStorageDir.getPath() + File.separator
